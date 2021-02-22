@@ -220,13 +220,13 @@ SUB_MENU_TITLE="Passwords Menu"
 
 menu_header
 
-echo -n "${Green} Enter the root password for MariaDB: ${Yellow}"
+echo -n "${Green} Enter the root password for MariaDB (default ${MYSQL_PASSWD_DEF}): ${Yellow}"
 	read MYSQL_PASSWD
 	MYSQL_PASSWD=${MYSQL_PASSWD:-${MYSQL_PASSWD_DEF}}
-echo -n "${Green} Enter the Guacamole DB password: ${Yellow}"
+echo -n "${Green} Enter the Guacamole DB password (default ${DB_PASSWD_DEF}): ${Yellow}"
 	read DB_PASSWD
 	DB_PASSWD=${DB_PASSWD:-${DB_PASSWD_DEF}}
-echo -n "${Green} Enter the Guacamole Java KeyStore password, must be 6 or more characters: ${Yellow}"
+echo -n "${Green} Enter the Guacamole Java KeyStore password, must be 6 or more characters (default ${JKS_GUAC_PASSWD_DEF}): ${Yellow}"
 	read JKS_GUAC_PASSWD
 	JKS_GUAC_PASSWD=${JKS_GUAC_PASSWD:-${JKS_GUAC_PASSWD_DEF}}
 }
