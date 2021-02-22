@@ -41,11 +41,11 @@ LE_KEY_SIZE_DEF="4096" # Default Let's Encrypt key-size
 SSL_KEY_SIZE_DEF="4096" # Default Self-signed SSL key-size
 
 # Default Credentials
-MYSQL_PASSWD_DEF="guacamole" # Default MySQL/MariaDB root password
+MYSQL_PASSWD_DEF=$(hexdump -n 16 -v -e '/1 "%02X"' -e '/16 "\n"' /dev/urandom) # Default MySQL/MariaDB root password
 DB_NAME_DEF="guac_db" # Defualt database name
 DB_USER_DEF="guac_adm" # Defualt database user name
-DB_PASSWD_DEF="guacamole" # Defualt database password
-JKS_GUAC_PASSWD_DEF="guacamole" # Default Java Keystore password
+DB_PASSWD_DEF=$(hexdump -n 16 -v -e '/1 "%02X"' -e '/16 "\n"' /dev/urandom) # Defualt database password
+JKS_GUAC_PASSWD_DEF=$(hexdump -n 16 -v -e '/1 "%02X"' -e '/16 "\n"' /dev/urandom) # Default Java Keystore password
 JKS_CACERT_PASSWD_DEF="guacamole" # Default CACert Java Keystore password, used with LDAPS
 
 # Misc
